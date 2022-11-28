@@ -1,0 +1,107 @@
+
+/* FOR THE BIG ASSIGNMENT */
+
+/* Question 1*/
+/*List all employees by last name alphabetically, and include all metadata*/
+/*
+SELECT Last_Name, First_Name, Department, Job_Title, Hourly_Rate
+FROM seattle_salaries
+ORDER BY Last_Name ASC
+*/
+
+/* Question 2*/
+/* Show he top 5 highest paid employees*/
+/*
+SELECT *
+FROM seattle_salaries
+ORDER BY Hourly_Rate DESC
+LIMIT 5
+*/
+
+/*  Question 3
+/*Sort employees by wage*/
+/*
+SELECT *
+FROM seattle_salaries 
+ORDER BY Hourly_Rate ASC
+*/
+
+/*Not in the homework I just did it anyway*/
+/*How many people have each individual rate*/
+/*
+SELECT Hourly_Rate, COUNT(First_Name) as 'People with Wage'
+FROM seattle_salaries
+GROUP BY Hourly_Rate
+*/
+
+/*Question 4*/
+/*Sort employees by wage and department*/
+/*
+SELECT *
+FROM seattle_salaries
+ORDER BY Department, Hourly_Rate ASC
+*/
+
+ /*Question 5*/
+ /*Determine the average salary*/
+ /*
+ SELECT AVG(Hourly_Rate) as 'Average_Hourly_Rate'
+ FROM seattle_salaries
+ */
+ 
+/*Question 6*/
+/*Create salary subtotals by department*/
+/*
+SELECT Department, 
+AVG(Hourly_Rate) as 'Average_Hourly_Rate'
+FROM seattle_salaries
+GROUP BY Department
+*/
+
+/*Question 7*/
+/*List top 10 employees by salary*/
+/*
+SELECT *
+FROM seattle_salaries
+ORDER BY Hourly_Rate DESC
+LIMIT 10
+*/
+
+/*Question 8*/
+/*List total number of employees in Parks and Rec*/
+/*
+SELECT Department, COUNT(First_Name) as 'People_in_Dept'
+FROM seattle_salaries
+WHERE Department = 'Parks & Recreation'
+*/
+
+/*Question 7 version 2*/
+/*List total number of employees per department*/
+/*
+SELECT Department, COUNT(First_Name) as 'People_in_Dept'
+FROM seattle_salaries
+GROUP BY Department
+*/
+
+/*Question 8 version 2*/
+/*List all job titles with no duplicates*/
+/*
+SELECT DISTINCT Job_Title
+FROM seattle_salaries
+*/
+
+/*Question 9*/
+/* Number of Police Officers*/
+/*
+SELECT Department, COUNT(First_Name) as 'People_in_Dept'
+FROM seattle_salaries
+WHERE Department = 'Police Department'
+*/
+
+/*Question 10*/
+/*Avg salary for IT employees*/
+/*
+SELECT Department, AVG(Hourly_Rate) as 'Avg_Hourly_Rate'
+FROM seattle_salaries
+WHERE Department = 'Information Technology'
+*/
